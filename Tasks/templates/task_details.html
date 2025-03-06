@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <div class="container_TD">
+        <h2>Task Details</h2>
+
+        <div class="task-card">
+            <p><strong>ID:</strong> {{ task.id }}</p>
+            <p><strong>Title:</strong> {{ task.title }}</p>
+            <p><strong>Description:</strong> {{ task.description }}</p>
+            <p><strong>Priority:</strong> <span class="priority {{ task.priority|lower }}">{{ task.priority }}</span></p>
+            <p><strong>Status:</strong> <span class="status {{ task.status|lower }}">{{ task.status }}</span></p>
+        </div>
+
+        <a href="{% url 'task_list' %}" class="btn_TD back">Back to Tasks</a>
+    </div>
+
+</body>
+</html>
